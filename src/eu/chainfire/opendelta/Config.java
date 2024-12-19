@@ -69,7 +69,6 @@ public class Config {
     private final String url_branch_name;
     private final String url_base_json;
     private final String url_api_history;
-    private final String url_cert_json;
     private final String android_version;
     private final long build_time;
 
@@ -107,9 +106,6 @@ public class Config {
         url_api_history = String.format(
                 res.getString(R.string.url_api_history),
                 url_branch_name, property_device, property_device);
-        url_cert_json = String.format(
-                res.getString(R.string.url_cert_json),
-                url_branch_name, property_device);
         android_version = Build.VERSION.RELEASE;
         filename_base_prefix = String.format(Locale.ENGLISH,
                 res.getString(R.string.filename_base), android_version);
@@ -127,7 +123,6 @@ public class Config {
         Logger.d("url_branch_name: %s", url_branch_name);
         Logger.d("url_base_json: %s", url_base_json);
         Logger.d("url_api_history: %s", url_api_history);
-        Logger.d("url_cert_json: %s", url_cert_json);
         Logger.d("use_twrp: %d", use_twrp ? 1 : 0);
         Logger.d("build_time: %d", build_time);
     }
@@ -250,10 +245,6 @@ public class Config {
 
     public String getUrlAPIHistory() {
         return url_api_history;
-    }
-
-    public String getUrlCertJson() {
-        return url_cert_json;
     }
 
     public String getAndroidVersion() {
